@@ -6,11 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
-@Component
 public class RunFromComponentScanning {
-
-    @Autowired
-    private Xxml autoWiredXxml;
 
     public static void main(String[] args) {
         System.out.println("***********************************************");

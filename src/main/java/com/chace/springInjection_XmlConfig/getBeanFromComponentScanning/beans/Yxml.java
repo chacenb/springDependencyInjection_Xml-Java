@@ -41,7 +41,6 @@ public class Yxml {
         System.out.println("Password = " + String.valueOf(password));
         System.out.println("***************************************************");
         System.out.println("");
-
     }
 
 }

@@ -1,15 +1,14 @@
-package com.chace.springInjection_JavaConfig;
+package com.chace.springInjection_JavaConfig.beans;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
-@Component
+@Controller
 public class Xjava {
-    Yjava yjava;
+    private Yjava yjava;
 
     @Autowired
-    public Xjava(Yjava yjava) {
-        this.yjava = yjava;
-    }
+    public Xjava(Yjava yjava) {this.yjava = yjava;}
 
     public void makeYjavaTalk(String msg){
         yjava.talkFromOutside(this.getClass(), msg);
