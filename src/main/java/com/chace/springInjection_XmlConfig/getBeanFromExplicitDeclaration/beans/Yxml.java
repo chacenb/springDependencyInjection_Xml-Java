@@ -1,11 +1,10 @@
 package com.chace.springInjection_XmlConfig.getBeanFromExplicitDeclaration.beans;
 
-import org.springframework.beans.factory.annotation.Value;
-
 //@Service
 public class Yxml {
 
 //    @Value("${DB_DRIVER_CLASS}")
+    private String rootProperty;
     private String driverClass;
 //    @Value("${DB_URL}")
     private String dbURL;
@@ -33,6 +32,14 @@ public class Yxml {
 
     public void setDriverClass(String driverClass) {
         this.driverClass = driverClass;
+    }
+
+    public String getRootProperty() {
+        return rootProperty;
+    }
+
+    public void setRootProperty(String rootProperty) {
+        this.rootProperty = rootProperty;
     }
 
     public String getDbURL() {

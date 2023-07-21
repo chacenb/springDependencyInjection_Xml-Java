@@ -21,7 +21,7 @@ public class ApplicationConfiguration {
     @Value("10")
     private int initializedInt;
 
-    @Value("${APP_NAME_NOT_FOUND:Default}")
+    @Value("${ROOT_PROPERTY:Default}")
     private String defaultAppName;
 
     @Value("${java.home}")

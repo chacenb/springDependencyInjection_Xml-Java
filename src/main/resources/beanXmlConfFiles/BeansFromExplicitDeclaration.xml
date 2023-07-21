@@ -7,17 +7,17 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-    <!-- we want to scan properties from multiple files -->
-    <context:property-placeholder location="classpath:db.properties,root.properties"/>
+    <!-- we want to scan .properties files from multiple files -->
+    <context:property-placeholder location="classpath:db.properties,classpath:root.properties"/>
 
-    <!-- we can inject properties into   -->
+    <!-- we inject properties into Yxml. NOTE: getters and setters must be present in the class in order for this to work   -->
     <bean id="beanY" class="com.chace.springInjection_XmlConfig.getBeanFromExplicitDeclaration.beans.Yxml">
+        <property name="rootProperty" value="${ROOT_PROPERTY}"/>
         <property name="driverClass" value="${DB_DRIVER_CLASS}"/>
         <property name="dbURL" value="${DB_URL}"/>
         <property name="userName" value="${DB_USERNAME}"/>
         <property name="password" value="${DB_PASSWORD}"/>
     </bean>
-
 
     <!-- We can wire dependencies via "property", "constructor", or "setter method"
     Here we use property injection. see https://www.baeldung.com/spring-xml-injection#:~:text=Dependency%20injection%20is%20a%20technique,are%20supplied%20by%20external%20containers.&text=This%20interface%20can%20have%20multiple%20implementations.&text=Here%2C%20IndexApp%20is%20a%20high,low%2Dlevel%20component%20called%20IService. -->
