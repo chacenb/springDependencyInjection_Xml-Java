@@ -1,4 +1,4 @@
-package com.chace.springInjectionJavaConfig;
+package com.chace.springInjection_JavaConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

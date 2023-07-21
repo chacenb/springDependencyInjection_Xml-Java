@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!-- explicit declaration of beans in xml file -->
+    <!-- https://www.baeldung.com/spring-xml-injection#:~:text=Dependency%20injection%20is%20a%20technique,are%20supplied%20by%20external%20containers.&text=This%20interface%20can%20have%20multiple%20implementations.&text=Here%2C%20IndexApp%20is%20a%20high,low%2Dlevel%20component%20called%20IService.
+    We can wire dependencies via "property", "constructor", or "setter method"
+    Here we use property injection -->
+    <bean id="beanY" class="com.chace.springInjection_XmlConfig.getBeanFromExplicitDeclaration.beans.Yxml"/>
+    <bean id="beanX" class="com.chace.springInjection_XmlConfig.getBeanFromExplicitDeclaration.beans.Xxml">
+        <property name="yxmlPropertyInsideXxml" ref="beanY"/>
+    </bean>
+
+</beans>

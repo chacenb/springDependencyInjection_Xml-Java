@@ -1,4 +1,4 @@
-package com.chace.springInjectionJavaConfig;
+package com.chace.springInjection_JavaConfig;
 
 //import com.chace.valueAnnot.DBConn;
 import org.springframework.beans.factory.annotation.Value;
@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@ComponentScan("com.chace.springInjectionJavaConfig")
+@ComponentScan("com.chace.springInjection_JavaConfig")
 @PropertySource("classpath:db.properties")
 @PropertySource(value = "classpath:root.properties", ignoreResourceNotFound = true)
 public class ApplicationConfiguration {

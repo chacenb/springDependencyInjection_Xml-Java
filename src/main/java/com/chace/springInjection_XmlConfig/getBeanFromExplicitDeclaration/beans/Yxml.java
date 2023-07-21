@@ -1,13 +1,12 @@
-package com.chace.springInjectionXmlConfig;
+package com.chace.springInjection_XmlConfig.getBeanFromExplicitDeclaration.beans;
 
-import org.springframework.stereotype.Service;
-
-@Service
+//@Service
 public class Yxml {
 
     public Yxml() {
         System.out.println("Yxml constructed");
     }
+
     public void methodY(){
         System.out.println("In method Yxml");
     }

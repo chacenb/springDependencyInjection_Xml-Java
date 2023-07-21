@@ -1,22 +1,25 @@
 package com.chace;
 
-import com.chace.springInjectionXmlConfig.*;
+import com.chace.springInjection_XmlConfig.getBeanFromExplicitDeclaration.beans.Xxml;
+import com.chace.springInjection_XmlConfig.getBeanFromExplicitDeclaration.beans.Yxml;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MainDependencyInjection {
 
-//    @Autowired
-//    static Xxml autoWiredXxml;
+    @Autowired
+    Xxml autoWiredXxml;
 
     public static void main(String[] args) {
 
         /* spring dependency injection with xml configuration WORKING */
         {
-            /* load the context and create beans specified in the Beans.xml file */
-            ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("Beans.xml");
+            /* load the context and create beans specified in the BeansFromComponentScanning.xml file */
+            ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("beanXmlConfFiles/BeansFromComponentScanning.xml");
 
-            /* getting beans created from Beans.xml file */
+            /* getting beans created from BeansFromComponentScanning.xml file */
 //            Xxml xxmlFromBeansXMLFile = (Xxml) ac.getBean("beanXidFromXmlFile");
 //            Yxml yxmlFromBeansXMLFile = (Yxml) ac.getBean("beanYidFromXmlFile");
 //            Yxml yxmlFromxxml = xxmlFromBeansXMLFile.getY();
@@ -24,11 +27,14 @@ public class MainDependencyInjection {
 //            xxmlFromBeansXMLFile.makeYjavaTalk("\"Hi chace XML\"");
 //            yxmlFromBeansXMLFile.methodY();
 
+
+            /* getting beans from component scanning */
             Xxml xxmlFromBeansXMLFileComponentScanning = (Xxml) ac.getBean(Xxml.class);
-            Yxml yxmlFromxxml = xxmlFromBeansXMLFileComponentScanning.getY();
+            Yxml yxmlFromBeansXMLFileComponentScanning = (Yxml) ac.getBean(Yxml.class);
+            Yxml yxmlFromxxml = xxmlFromBeansXMLFileComponentScanning.getYxmlPropertyInsideXxml();
             yxmlFromxxml.methodY();
             xxmlFromBeansXMLFileComponentScanning.makeYjavaTalk("\"Hi chace XML\"");
-//            yxmlFromBeansXMLFile.methodY();
+            yxmlFromBeansXMLFileComponentScanning.methodY();
 
             ac.close();
         }
