@@ -16,8 +16,8 @@ public class RunFromExplicitBeanDeclaration {
         /* getting X bean created from xml file and do some actions */
         Xxml xxmlBean = appContext.getBean("beanX", Xxml.class);
         Yxml yxmlFromxxml = xxmlBean.getYxmlPropertyInsideXxml();
-        yxmlFromxxml.methodY();
         xxmlBean.makeYjavaTalk("\"Hi chace XML\"");
+        yxmlFromxxml.printDBConfigs();
 
         /* getting Y bean created from xml file and do some actions */
         Yxml yxmlBean = appContext.getBean("beanY", Yxml.class);
