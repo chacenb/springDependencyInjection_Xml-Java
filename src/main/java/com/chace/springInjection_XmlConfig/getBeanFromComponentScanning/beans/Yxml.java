@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class Yxml {
 
+    @Value("${ROOT_PROPERTY}")
+    private String rootProperty;
     @Value("${DB_DRIVER_CLASS}")
     private String driverClass;
     @Value("${DB_URL}")
@@ -32,6 +34,7 @@ public class Yxml {
         System.out.println("***************************************************");
         System.out.println("************ READING DB PROPERTIES VALUES **********");
         System.out.println("***************************************************");
+        System.out.println("Root property = " + rootProperty);
         System.out.println("Driver Class = " + driverClass);
         System.out.println("DB URL = " + dbURL);
         System.out.println("User Name = " + userName);

@@ -3,16 +3,11 @@ package com.chace.springInjection_XmlConfig.getBeanFromExplicitDeclaration.beans
 //@Service
 public class Yxml {
 
-//    @Value("${DB_DRIVER_CLASS}")
     private String rootProperty;
     private String driverClass;
-//    @Value("${DB_URL}")
     private String dbURL;
-//    @Value("${DB_USERNAME}")
     private String userName;
-//    @Value("${DB_PASSWORD}")
     private char[] password;
-
 
     public Yxml() {
         System.out.println("Yxml constructed");
@@ -71,6 +66,7 @@ public class Yxml {
         System.out.println("***************************************************");
         System.out.println("************ READING DB PROPERTIES VALUES **********");
         System.out.println("***************************************************");
+        System.out.println("Root property = " + rootProperty);
         System.out.println("Driver Class = " + driverClass);
         System.out.println("DB URL = " + dbURL);
         System.out.println("User Name = " + userName);

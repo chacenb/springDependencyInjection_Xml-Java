@@ -13,15 +13,16 @@ public class RunFromExplicitBeanDeclaration {
         /* load the context and create beans specified in the BeansFromComponentScanning.xml file */
         ClassPathXmlApplicationContext appContext = new ClassPathXmlApplicationContext("beanXmlConfFiles/BeansFromExplicitDeclaration.xml");
 
+        /* getting Y bean created from xml file and do some actions */
+        Yxml yxmlBean = appContext.getBean("beanY", Yxml.class);
+        yxmlBean.methodY();
+
         /* getting X bean created from xml file and do some actions */
         Xxml xxmlBean = appContext.getBean("beanX", Xxml.class);
         Yxml yxmlFromxxml = xxmlBean.getYxmlPropertyInsideXxml();
         xxmlBean.makeYjavaTalk("\"Hi chace XML\"");
         yxmlFromxxml.printDBConfigs();
 
-        /* getting Y bean created from xml file and do some actions */
-        Yxml yxmlBean = appContext.getBean("beanY", Yxml.class);
-        yxmlBean.methodY();
 
         /* closing application context */
         appContext.close();

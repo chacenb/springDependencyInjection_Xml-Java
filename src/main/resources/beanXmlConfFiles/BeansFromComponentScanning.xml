@@ -11,6 +11,9 @@
     <!-- specify that the beans will be annotated-->
     <context:annotation-config/>
 
+    <!-- we want to scan .properties files from multiple files -->
+    <context:property-placeholder location="classpath:db.properties,classpath:root.properties"/>
+
     <!-- specify the package into which those annotated beans are -->
     <context:component-scan base-package="com.chace.springInjection_XmlConfig.getBeanFromComponentScanning"/>
 
