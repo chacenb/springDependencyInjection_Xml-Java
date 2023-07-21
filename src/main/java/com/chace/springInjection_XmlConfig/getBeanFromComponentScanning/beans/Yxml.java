@@ -1,6 +1,8 @@
-package com.chace.springInjection_XmlConfig.getBeanFromExplicitDeclaration.beans;
+package com.chace.springInjection_XmlConfig.getBeanFromComponentScanning.beans;
 
-//@Service
+import org.springframework.stereotype.Service;
+
+@Service
 public class Yxml {
 
     public Yxml() {
@@ -8,7 +10,7 @@ public class Yxml {
     }
 
     public void methodY(){
-        System.out.println("Hi method from inside Yxml");
+        System.out.println("Hi from inside Yxml");
     }
 
     public void talkFromOutside(Class<?> triggerClass,String msg) {
