@@ -27,6 +27,7 @@ public class ApplicationConfiguration {
     @Value("${java.home}")
     private String javaHome;
 
+/*
     @Value("Test")
     public void printValues(String s, @Value("another variable") String v) {
         System.out.println("");
@@ -47,4 +48,5 @@ public class ApplicationConfiguration {
         System.out.println("************ READING ROOT.PROPERTIES FILE *******");
         System.out.println("Default App Name = " + defaultAppName);
     }
+*/
 }

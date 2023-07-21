@@ -1,6 +1,13 @@
 package com.chace.springInjectionXmlConfig;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class Yxml {
+
+    public Yxml() {
+        System.out.println("Yxml constructed");
+    }
     public void methodY(){
         System.out.println("In method Yxml");
     }
